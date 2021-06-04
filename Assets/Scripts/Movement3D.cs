@@ -43,4 +43,21 @@ public class Movement3D : MonoBehaviour
             _moveDirection.y = jumpForce;
         }
     }
+
+    public void Sprint(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            moveSpeed = 10.0f;
+        }
+        if (ctx.canceled)
+        {
+            moveSpeed = 5.0f;
+        }
+    }
+
+    public void Sliding(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+    {
+        
+    }
 }
